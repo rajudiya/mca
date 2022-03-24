@@ -11,6 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="customer_add_style.css">
+    <script type="text/javascript" src="all.js"></script>
 </head>
 
 <body>
@@ -45,11 +46,11 @@
         <div class="flex-container">
             <div class=container>
                 <label>Enter New Password :</label><br>
-                <input name="new_pwd" size="30" type="password" required />
+                <input name="new_pwd" size="15" type="password" id="password" minlength="8" maxlength="16" required />
             </div>
             <div  class=container>
                 <label>Enter New Password Again! :</b></label><br>
-                <input name="check_pwd" size="30" type="password" required />
+                <input name="check_pwd" size="15" type="password" id="confirm_password" minlength="8" maxlength="16" required/>
             </div>
         </div>
 

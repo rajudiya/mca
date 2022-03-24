@@ -67,12 +67,12 @@ $sql3 = "INSERT INTO customer VALUES(
             '$lname',
             '$gender',
             '$dob',
-            $aadhar,
+            '$aadhar',
             '$email',
-            $phno,
+            '$phno',
             '$address',
-             $acno,
-             $pin,
+            '$acno',
+            '$pin',
             '$cus_uname',
             '$cus_pwd'
         )";
@@ -93,8 +93,9 @@ $sql4 = "INSERT INTO passbook".$id." VALUES(
         <div class="flex-item">
             <?php
             if (($conn->query($sql3) === TRUE)) { ?>
-                <p id="info"><?php echo "Account created successfully !\n";?></p>
+                <p id="info"><?php echo "Account created successfully !\n"; ?></p>
         </div>
+
         <div class="flex-item">
             <?php
             if (($conn->query($sql1) === TRUE)) { ?>
@@ -102,7 +103,7 @@ $sql4 = "INSERT INTO passbook".$id." VALUES(
             <?php
             } else { ?>
                 <p id="info"><?php
-                echo "Error: " . $sql1 . "<br>" . $conn->error . "<br>"; ?></p>
+                echo "Error: ". $conn->error . "<br>"; ?></p>
             <?php } ?>
         </div>
 
@@ -113,7 +114,7 @@ $sql4 = "INSERT INTO passbook".$id." VALUES(
             <?php
             } else { ?>
                 <p id="info"><?php
-                echo "Error: " . $sql4 . "<br>" . $conn->error . "<br>"; ?></p>
+                echo "Error: ". $conn->error . "<br>"; ?></p>
             <?php } ?>
         </div>
 
@@ -124,7 +125,7 @@ $sql4 = "INSERT INTO passbook".$id." VALUES(
             <?php
             } else { ?>
                 <p id="info"><?php
-                echo "Error: " . $sql2 . "<br>" . $conn->error . "<br>"; ?></p>
+                echo "Error: ". $conn->error . "<br>"; ?></p>
             <?php } ?>
         </div>
 
@@ -133,7 +134,7 @@ $sql4 = "INSERT INTO passbook".$id." VALUES(
         </div>
         <div class="flex-item">
                 <p id="info"><?php
-                echo "Error: " . $sql3 . "<br>" . $conn->error . "<br>"; ?></p>
+                echo "Error: ". $conn->error . "<br>"; ?></p>
             <?php } ?>
         </div>
         <?php $conn->close(); ?>

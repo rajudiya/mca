@@ -57,7 +57,6 @@
     </div>
 
     <div class="flex-container">
-        <p id="info">Send to, Add/Delete Beneficiaries.</p>
         <?php
             $result = $conn->query($sql0);
             $isBenefPresent = 0;
@@ -122,7 +121,7 @@
             <?php }}}
 
             if ($isBenefPresent == 0) { ?>
-                <p id="none"> No beneficiaries found :(</p>
+                <p id="none"> No beneficiaries found</p>
             <?php }
             if ($back_button) { ?>
                 <div class="flex-container-bb">

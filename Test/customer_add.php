@@ -11,22 +11,24 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="customer_add_style.css">
+     <script type="text/javascript" src="all.js"></script>
 </head>
 
 <body>
     <form class="add_customer_form" action="customer_add_action.php" method="post">
-        <div class="flex-container-form_header">
-            <h1 id="form_header"> Create Wallet  and  Wallet link to Bank</h1>
+        <div class="reg">
+        <div class="flex-container-form_header" align="center">
+            <h1 id="form_header"> Registration</h1>
         </div>
 
         <div class="flex-container">
             <div class=container>
                 <label>First Name :</label><br>
-                <input name="fname" size="30" type="text" required />
+                <input name="fname" size="30" type="text" required style='text-transform:uppercase' />
             </div>
             <div  class=container>
                 <label>Last Name :</b></label><br>
-                <input name="lname" size="30" type="text" required />
+                <input name="lname" size="30" type="text" required style='text-transform:uppercase' />
             </div>
         </div>
 
@@ -60,18 +62,18 @@
         <div class="flex-container">
             <div class=container>
                 <label>Aadhar No :</label><br>
-                <input name="aadhar" size="25" Maxlength="12" Minlength="12" type="text" required />
+                <input name="aadhar" size="25" Maxlength="14" Minlength="14" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  id="aadhharno" required />
             </div>
         </div>
 
         <div class="flex-container">
             <div class=container>
                 <label>Email-ID :</label><br>
-                <input name="email" size="30" type="text" required />
+                <input name="email" size="30" type="text" required  style='text-transform:lowercase;'/>
             </div>
             <div  class=container>
                 <label>Phone No. :</b></label><br>
-                <input name="phno" size="30" Maxlength="10" Minlength="10" type="text" required />
+                <input name="phno" size="30" Maxlength="10" Minlength="10" type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required />
             </div>
         </div>
 
@@ -86,7 +88,11 @@
         <div class="flex-container">
             <div class=container>
                 <label>Account No :</label><br>
-                <input name="acno" size="25" Maxlength="11" Minlength="11" type="text" required />
+                <input name="acno" size="20" Maxlength="11" Minlength="11" type="text" id="a1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required />
+            </div>&nbsp;
+            <div class="container">
+                <label>Confom Account No :</label><br>
+                <input name="acno" size="20" Maxlength="11" Minlength="11" type="text" id="a2"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required />
             </div>
         </div>
 
@@ -98,18 +104,22 @@
 
             <div  class=container>               
                      <label> Wallet PIN(4 digit) :</b></label><br>
-                <input name="pin" size="15" Maxlength="4" Minlength="4" type="text" required />
+                <input name="pin" size="15" Maxlength="4" Minlength="4" type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required />
             </div>
         </div>
 
         <div class="flex-container">
             <div class=container>
                 <label>Username :</label><br>
-                <input name="cus_uname" size="30" type="text" required />
+                <input name="cus_uname" size="15" type="text" required />
             </div>
             <div  class=container>
                 <label>Password :</b></label><br>
-                <input name="cus_pwd" size="30" type="text" required />
+                <input name="cus_pwd" size="15" type="password" id="password" minlength="8" maxlength="16" required />
+            </div>
+            <div class="container">
+                 <label>confirm password :</b></label><br>
+                <input name="cus_pwd" size="15" type="password" id="confirm_password" minlength="8" maxlength="16" required />
             </div>
         </div>
 
@@ -122,14 +132,7 @@
                 <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
             </div>
         </div>
-
+    </div>
     </form>
-
-    <script>
-    function confirmReset() {
-        return confirm('Do you really want to reset?')
-    }
-    </script>
-
 </body>
 </html>
