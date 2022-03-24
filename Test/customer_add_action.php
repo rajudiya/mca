@@ -42,7 +42,7 @@ $id = $row["MAX(cust_id)"] + 1;
 $sql5 = "ALTER TABLE customer AUTO_INCREMENT=".$id;
 $conn->query($sql5);
 
-$sql1 = "CREATE TABLE passbook".$id."(
+/*$sql1 = "CREATE TABLE passbook".$id."(
             trans_id INT NOT NULL AUTO_INCREMENT,
             trans_date DATETIME,
             remarks VARCHAR(255),
@@ -50,9 +50,9 @@ $sql1 = "CREATE TABLE passbook".$id."(
             credit INT,
             balance INT,
             PRIMARY KEY(trans_id)
-        )";
+        )";*/
 
-$sql2 = "CREATE TABLE beneficiary".$id."(
+/*$sql2 = "CREATE TABLE beneficiary".$id."(
             benef_id INT NOT NULL AUTO_INCREMENT,
             benef_cust_id INT UNIQUE,
             email VARCHAR(30) UNIQUE,
@@ -60,7 +60,7 @@ $sql2 = "CREATE TABLE beneficiary".$id."(
             account_no INT UNIQUE,
             PRIMARY KEY(benef_id)
         )";
-
+*/
 $sql3 = "INSERT INTO customer VALUES(
             NULL,
             '$fname',
